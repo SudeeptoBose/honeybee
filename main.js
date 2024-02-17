@@ -14,5 +14,10 @@ const experience = new Experience(document.querySelector('.experience-canvas'))
 
 window.addEventListener("scroll", (e)=>{
     experience.camera.onScrollCameraUpdate(e)
-    experience.world.jar.setJarAnimation()
+    // console.log(window.scrollY/500)
+    // if(window.scrollY/500 >=2)
+    // {
+    //     experience.world.jar.setJarAnimation()
+    // }
+
 })

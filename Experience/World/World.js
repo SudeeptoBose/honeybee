@@ -3,7 +3,7 @@ import Experience from '../Experience'
 import Environment from './Environment'
 import Model from './Model'
 import Jar from './Jar'
-// import Honeycomb from './Honeycomb'
+import Honeycomb from './Honeycomb'
 
 export default class World{
     constructor(){
@@ -18,7 +18,7 @@ export default class World{
             this.environment = new Environment()
             this.model = new Model()
             this.jar = new Jar()
-            // this.honeycomb = new Honeycomb()
+            this.honeycomb = new Honeycomb()
         })
 
     }
@@ -40,6 +40,11 @@ export default class World{
         if(this.jar)
         {
             this.jar.update()
+        }
+
+        if(this.honeycomb)
+        {
+            this.honeycomb.update()
         }
     }
 }

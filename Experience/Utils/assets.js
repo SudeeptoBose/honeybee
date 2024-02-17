@@ -5,9 +5,14 @@ export default[
         path: "/models/bee.glb"
     },
     {
-        name: "nvisio",
+        name: "jar",
         type: "gltfModel",
-        path: "/models/nvisio.glb"
+        path: "/models/jar.glb"
+    },
+    {
+        name: "honeycombAlphaMap",
+        type: "texture",
+        path: "/textures/AlphaMap.png"
     },
     {
         name: "baseColor",

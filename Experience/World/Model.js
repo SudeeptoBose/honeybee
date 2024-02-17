@@ -10,7 +10,7 @@ export default class Model{
         // this.duck = this.assets.model.scene
         this.bee = this.assets.bee.scene
         this.time = this.experience.time
-        console.log(this.bee)
+        // console.log(this.bee)
 
         this.setModel()
         // this.setModelMaterial()

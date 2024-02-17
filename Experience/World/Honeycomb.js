@@ -10,13 +10,43 @@ export default class Honeycomb{
         this.resources = this.experience.resources
         this.assets = this.resources.items
         this.time = this.experience.time
-
-        this.setHoneycomb()
+        console.log(this.assets)
+        // this.setHoneycombShader()
+        this.setHoneycombParticles()
     }
 
-    setHoneycomb()
+    setHoneycombParticles()
     {
-        this.honeycombGeomtery = new THREE.PlaneGeometry(1,1)
+        const particleGeometry = new THREE.BufferGeometry()
+        const count = 250
+
+        const positions = new Float32Array( count * 3)
+
+        for(let i = 0; i <count *3; i++)
+        {
+            positions[i] = (Math.random() -0.5) * 30
+        }
+
+        particleGeometry.setAttribute(
+            'position',
+            new THREE.BufferAttribute(positions, 3)
+        )
+
+        const particleMaterial = new THREE.PointsMaterial({
+            color: 'red',
+            transparent:true,
+            alphaMap:this.assets.honeycombAlphaMap,
+            depthWrite:false,
+        })
+        particleMaterial.size = 1
+        particleMaterial.sizeAttenuation = true
+        this.honeycombParticles = new THREE.Points(particleGeometry, particleMaterial)
+        this.scene.add(this.honeycombParticles)
+        this.honeycombParticles.position.z = -1
+    }
+    setHoneycombShader()
+    {
+        this.honeycombGeomtery = new THREE.PlaneGeometry(1,1, 128, 128)
         this.honeycombMaterial =  new THREE.ShaderMaterial(
             {
                 vertexShader: honeycombVertexShader,
@@ -24,6 +54,14 @@ export default class Honeycomb{
             }
         )
 
-        console.log('honey')
+
+
+        this.honeyCombs = new THREE.Mesh(this.honeycombGeomtery, this.honeycombMaterial)
+        this.scene.add(this.honeyCombs)
+    }
+
+    update()
+    {
+        this.honeycombParticles.rotation.y += 0.0005 
     }
 }

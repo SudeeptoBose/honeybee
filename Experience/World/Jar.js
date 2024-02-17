@@ -6,38 +6,36 @@ export default class Jar{
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
+        this.jarGroup = this.resources.items.jar
         this.assets = this.resources.items
         this.time = this.experience.time
 
         this.setJar()
-
     }
 
     setJar()
     {
-        const geometry = new THREE.BoxGeometry( 0.5, 0.5, 0.5 );
-        const material = new THREE.MeshStandardMaterial( { color: 0xff00ff } );
-        this.cube = new THREE.Mesh( geometry, material );
-        this.cube1 = new THREE.Mesh( geometry, material );
-        this.cube2 = new THREE.Mesh( geometry, material );
-
-        this.scene.add( this.cube);
-        this.cube.position.y = -2
-        this.cube.position.x = 1.5
+        this.jar = this.jarGroup.scene
+        this.jar.scale.set(0.5,0.5,0.5)
+        this.scene.add(this.jar);
+        this.jar.position.y = -3.1
+        this.jar.position.x = 1.5
     }
 
     setJarAnimation()
     {
-        this.cube.rotation.y += 0.05
+        this.jar.rotation.y += 0.03
         // this.cube1.rotation.y += 0.05
         // this.cube2.rotation.y += 0.05
-        this.cube.rotation.z += 0.05
+        this.jar.rotation.x += 0.03
+
+        // this.jar.scale.set(Math.sin(this.time.elapsed * 0.0001)/2,Math.sin(this.time.elapsed * 0.0001)/2,Math.sin(this.time.elapsed * 0.0001)/2)
         // this.cube1.rotation.z += 0.05
         // this.cube2.rotation.z += 0.05
 
-        this.cube.position.x = (Math.sin(window.scrollY/500))
-        this.cube.position.z = -(Math.cos(window.scrollY/500))
-        this.cube.position.y = -(window.scrollY/500)
+        this.jar.position.x = (Math.sin(window.scrollY/500)) +0.5
+        this.jar.position.z = -(Math.cos(window.scrollY/500))
+        this.jar.position.y = -(window.scrollY/500)-0.5
     }
 
     resize()
@@ -47,5 +45,6 @@ export default class Jar{
 
     update()
     {
+        this.setJarAnimation()
     }
 }
