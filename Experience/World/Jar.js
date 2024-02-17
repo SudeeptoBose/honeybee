@@ -18,8 +18,8 @@ export default class Jar{
         this.jar = this.jarGroup.scene
         this.jar.scale.set(0.4,0.4,0.4)
         this.scene.add(this.jar);
-        this.jar.position.y = -3.1
-        // this.jar.position.x = 1.5
+        this.jar.position.y = -3.7
+        this.jar.position.x = 1.5
     }
 
     setJarAnimation()
@@ -33,9 +33,9 @@ export default class Jar{
         // this.cube1.rotation.z += 0.05
         // this.cube2.rotation.z += 0.05
 
-        this.jar.position.x = (Math.sin(window.scrollY/500)) * 2
-        this.jar.position.z = -(Math.cos(window.scrollY/500))
-        this.jar.position.y = -(window.scrollY/500)-0.5
+        // this.jar.position.x = (Math.sin(window.scrollY/500)) * 2
+        // this.jar.position.z = -(Math.cos(window.scrollY/500))
+        // this.jar.position.y = -(window.scrollY/500)-0.5
     }
 
     resize()

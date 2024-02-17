@@ -4,16 +4,34 @@ import Experience from './Experience/Experience'
 const experience = new Experience(document.querySelector('.experience-canvas'))
 
 
-// // Model follow mouse
-// window.addEventListener("mousemove", (e)=>{
-//     console.log(0.5-(e.clientY/window.innerHeight), (e.clientX/window.innerWidth) - 0.5)
+// Model follow mouse
 
-//     experience.world.model.bee.position.x = ((e.clientX/window.innerWidth) - 0.5) *2
-//     experience.world.model.bee.position.y = (0.5-(e.clientY/window.innerHeight)) * 2
-// })
 
 window.addEventListener("scroll", (e)=>{
-    experience.camera.onScrollCameraUpdate(e)
+    console.log(window.scrollY/500)
+    if(window.scrollY/500 > 0.2)
+    {
+        experience.world.model.flag = false 
+        window.addEventListener("mousemove", (e)=>{
+            // console.log(0.5-(e.clientY/window.innerHeight), (e.clientX/window.innerWidth) - 0.5)
+            // console.log(experience.world.model.flag)
+            console.log( 0.5 -(e.clientY/window.innerHeight))
+            experience.world.model.bee.position.x =  (-0.5 + (e.clientX/window.innerWidth)) * 4
+            experience.world.model.bee.position.y = -2.5  + (0.5 -(e.clientY/window.innerHeight)) * 3
+        })
+    }else if (window.scrollY/500 === 0)
+    {
+        experience.world.model.flag = true
+        experience.world.model.bee.position.x = 2
+        experience.world.model.bee.position.y = 1
+        // console.log(window.scrollY/500)
+    }
+
+    if(window.scrollY/500 < 1.4)
+    {
+        experience.camera.onScrollCameraUpdate(e)
+        experience.world.jar.jar.position.y = -3 + (window.scrollY/500)
+    }
     // console.log(window.scrollY/500)
     // if(window.scrollY/500 >=2)
     // {

@@ -13,6 +13,8 @@ export default class Model{
         // console.log(this.bee)
 
         this.setModel()
+        this.flag =true
+        // console.log(this.flag)
         // this.setModelMaterial()
         // this.setMesh()
         // this.setMeshAnimation()
@@ -69,8 +71,12 @@ export default class Model{
         this.bee.children[2].rotation.x =(Math.sin(-this.time.elapsed * 0.01))/2
         this.bee.rotation.y += 0.01 
         // this.bee.rotation.z += 0.01 
-        // this.bee.rotation.x += 0.01 
-        this.bee.position.x = -(Math.sin(this.time.elapsed * 0.001)) *2
+        // this.bee.rotation.x += 0.01
+        // console.log(this.flag)
+        if(this.flag === true)
+        {
+            this.bee.position.x = -(Math.sin(this.time.elapsed * 0.001)) *2
+        } 
         // this.bee.position.z = (Math.cos(this.time.elapsed * 0.001)) * 1.5
     }
 
@@ -82,6 +88,6 @@ export default class Model{
     update()
     {
         // this.mesh.rotation.y += 0.01
-        this.setMeshAnimation()
+        this.setMeshAnimation(this.flag)
     }
 }
