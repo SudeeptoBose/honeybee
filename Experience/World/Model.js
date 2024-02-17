@@ -23,11 +23,10 @@ export default class Model{
     {
         this.scene.add(this.bee)
         this.bee.rotation.y = 1.5
-        // this.duck.position.x = 1
-        // this.bee.position.x = 1
-        // this.bee.position.y = -0.4
+        this.bee.position.x = 2
+        this.bee.position.y = 1
 
-        this.bee.scale.set(0.5,0.5,0.5)
+        this.bee.scale.set(0.1,0.1,0.1)
         // this.bee.scale.set(1.5,1.5,1.5)
 
     }
@@ -70,9 +69,9 @@ export default class Model{
         this.bee.children[2].rotation.x =(Math.sin(-this.time.elapsed * 0.01))/2
         this.bee.rotation.y += 0.01 
         // this.bee.rotation.z += 0.01 
-        this.bee.rotation.x += 0.01 
-        this.bee.position.x = (Math.sin(this.time.elapsed * 0.001))
-        this.bee.position.z = (Math.cos(this.time.elapsed * 0.001)) * 1.5
+        // this.bee.rotation.x += 0.01 
+        this.bee.position.x = -(Math.sin(this.time.elapsed * 0.001)) *2
+        // this.bee.position.z = (Math.cos(this.time.elapsed * 0.001)) * 1.5
     }
 
     resize()

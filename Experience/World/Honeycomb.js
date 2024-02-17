@@ -33,12 +33,12 @@ export default class Honeycomb{
         )
 
         const particleMaterial = new THREE.PointsMaterial({
-            color: 'red',
+            color: new THREE.Color('#1E1E1E'),
             transparent:true,
-            alphaMap:this.assets.honeycombAlphaMap,
+            // alphaMap:this.assets.honeycombAlphaMap,
             depthWrite:false,
         })
-        particleMaterial.size = 1
+        particleMaterial.size = 0.5
         particleMaterial.sizeAttenuation = true
         this.honeycombParticles = new THREE.Points(particleGeometry, particleMaterial)
         this.scene.add(this.honeycombParticles)
