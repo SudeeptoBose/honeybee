@@ -8,7 +8,7 @@ const experience = new Experience(document.querySelector('.experience-canvas'))
 
 
 window.addEventListener("scroll", (e)=>{
-    console.log(window.scrollY/500)
+    console.log(window.scrollY/500, 'window scroll')
     if(window.scrollY/500 > 0.2)
     {
         experience.world.model.flag = false 
@@ -29,8 +29,8 @@ window.addEventListener("scroll", (e)=>{
 
     if(window.scrollY/500 < 1.4)
     {
-        experience.camera.onScrollCameraUpdate(e)
-        experience.world.jar.jar.position.y = -3 + (window.scrollY/500)
+        console.log(experience.world.jar.jar.position.y += (window.scrollY/500))
+        // experience.camera.onScrollCameraUpdate(e)
     }
     // console.log(window.scrollY/500)
     // if(window.scrollY/500 >=2)

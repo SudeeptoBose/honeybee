@@ -7,7 +7,6 @@ export default class Model{
         this.scene = this.experience.scene
         this.resources = this.experience.resources
         this.assets = this.resources.items
-        // this.duck = this.assets.model.scene
         this.bee = this.assets.bee.scene
         this.time = this.experience.time
         // console.log(this.bee)
@@ -29,7 +28,6 @@ export default class Model{
         this.bee.position.y = 1
 
         this.bee.scale.set(0.1,0.1,0.1)
-        // this.bee.scale.set(1.5,1.5,1.5)
 
     }
 
@@ -70,9 +68,6 @@ export default class Model{
         this.bee.children[1].rotation.x =(Math.sin(this.time.elapsed * 0.01))/2
         this.bee.children[2].rotation.x =(Math.sin(-this.time.elapsed * 0.01))/2
         this.bee.rotation.y += 0.01 
-        // this.bee.rotation.z += 0.01 
-        // this.bee.rotation.x += 0.01
-        // console.log(this.flag)
         if(this.flag === true)
         {
             this.bee.position.x = -(Math.sin(this.time.elapsed * 0.001)) *2
@@ -87,7 +82,6 @@ export default class Model{
 
     update()
     {
-        // this.mesh.rotation.y += 0.01
         this.setMeshAnimation(this.flag)
     }
 }
