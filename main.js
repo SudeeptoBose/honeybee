@@ -15,7 +15,7 @@ window.addEventListener("scroll", (e)=>{
         window.addEventListener("mousemove", (e)=>{
             // console.log(0.5-(e.clientY/window.innerHeight), (e.clientX/window.innerWidth) - 0.5)
             // console.log(experience.world.model.flag)
-            console.log( 0.5 -(e.clientY/window.innerHeight))
+            // console.log( 0.5 -(e.clientY/window.innerHeight))
             experience.world.model.bee.position.x =  (-0.5 + (e.clientX/window.innerWidth)) * 4
             experience.world.model.bee.position.y = -2.5  + (0.5 -(e.clientY/window.innerHeight)) * 3
         })
@@ -27,10 +27,11 @@ window.addEventListener("scroll", (e)=>{
         // console.log(window.scrollY/500)
     }
 
-    if(window.scrollY/500 < 1.4)
+    if(window.scrollY/500 < 2)
     {
-        console.log(experience.world.jar.jar.position.y += (window.scrollY/500))
+        // console.log(experience.world.jar.jar.position.y += (window.scrollY/500))
         // experience.camera.onScrollCameraUpdate(e)
+        experience.world.jar.setJarPosition()
     }
     // console.log(window.scrollY/500)
     // if(window.scrollY/500 >=2)
