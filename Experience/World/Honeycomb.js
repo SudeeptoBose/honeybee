@@ -62,6 +62,6 @@ export default class Honeycomb{
 
     update()
     {
-        this.honeycombParticles.rotation.y += 0.0005 
+        this.honeycombParticles.rotation.x += 0.0005 
     }
 }

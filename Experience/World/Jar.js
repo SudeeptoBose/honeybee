@@ -19,7 +19,7 @@ export default class Jar{
         this.jar.scale.set(0.4,0.4,0.4)
         this.scene.add(this.jar);
         this.jar.position.y = 0
-        this.jar.position.x = 5
+        this.jar.position.x = 1
     }
 
     setJarAnimation()
@@ -43,7 +43,7 @@ export default class Jar{
         if(this.jar.position.x > 1.5)
         {
             this.jar.position.x += -(window.scrollY/500)
-            console.log(this.jar.position.x)
+            // console.log(this.jar.position.x)
         }
 
     }
