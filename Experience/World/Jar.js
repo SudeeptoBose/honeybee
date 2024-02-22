@@ -7,6 +7,7 @@ export default class Jar{
         this.scene = this.experience.scene
         this.resources = this.experience.resources
         this.jarGroup = this.resources.items.jar
+        this.jar = this.jarGroup.scene
         this.assets = this.resources.items
         this.time = this.experience.time
 
@@ -15,11 +16,10 @@ export default class Jar{
 
     setJar()
     {
-        this.jar = this.jarGroup.scene
         this.jar.scale.set(0.4,0.4,0.4)
         this.scene.add(this.jar);
         this.jar.position.y = 0
-        this.jar.position.x = 1
+        this.jar.position.x = 3
     }
 
     setJarAnimation()
@@ -47,6 +47,7 @@ export default class Jar{
         }
 
     }
+
 
     resize()
     {

@@ -4,6 +4,7 @@ import Environment from './Environment'
 import Model from './Model'
 import Jar from './Jar'
 import Honeycomb from './Honeycomb'
+import Controls from './Controls'
 
 export default class World{
     constructor(){
@@ -19,6 +20,7 @@ export default class World{
             this.model = new Model()
             this.jar = new Jar()
             this.honeycomb = new Honeycomb()
+            this.controls = new Controls()
         })
 
     }

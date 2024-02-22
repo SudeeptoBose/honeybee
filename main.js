@@ -52,3 +52,14 @@ const experience = new Experience(document.querySelector('.experience-canvas'))
 
     
 // })
+
+// const gettingSection = document.getElementById('section-1')
+// const gettingSectionValue = gettingSection.getBoundingClientRect()
+
+// window.addEventListener('scroll', ()=>{
+//     console.log(gettingSection.getBoundingClientRect())
+//     if(gettingSectionValue.top < 50)
+//     {
+        
+//     }
+// })
