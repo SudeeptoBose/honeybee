@@ -11,6 +11,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body
+{
+  cursor: url(honeylogo.png), auto;
+}
+
 .experience{
   position: fixed;
   width: 100vw;

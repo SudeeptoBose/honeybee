@@ -29,6 +29,7 @@ export default class Controls{
                 invalidateOnRefresh: true
             }
         })
+        
         console.log('gsap')
     }
 

@@ -4,6 +4,7 @@ import Experience from '../Experience'
 export default class Jar{
     constructor(){
         this.experience = new Experience()
+        this.sizes = this.experience.sizes
         this.scene = this.experience.scene
         this.resources = this.experience.resources
         this.jarGroup = this.resources.items.jar
@@ -19,7 +20,7 @@ export default class Jar{
         this.jar.scale.set(0.4,0.4,0.4)
         this.scene.add(this.jar);
         this.jar.position.y = 0
-        this.jar.position.x = 3
+        this.jar.position.x = this.sizes.width * 0.01
     }
 
     setJarAnimation()

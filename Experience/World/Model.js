@@ -12,11 +12,11 @@ export default class Model{
         // console.log(this.bee)
 
         this.setModel()
-        this.flag =true
+        this.flag =false
         // console.log(this.flag)
         // this.setModelMaterial()
         // this.setMesh()
-        // this.setMeshAnimation()
+        // this.setModelAnimation()
 
     }
 
@@ -31,39 +31,8 @@ export default class Model{
 
     }
 
-    setModelMaterial()
-    {
-        this.bee.traverse((child)=>{
-            if(child.isMesh = true)
-            {
-                if(child.material = true)
-                {
-                    child.material = new THREE.MeshToonMaterial(
-                        {color: 0xFFFF00,}
-                    )
-                }
-            }
-        })
-    }
-
-    setMesh()
-    {
-        const geometry = new THREE.OctahedronGeometry(1, 30);
-        const material = new THREE.MeshStandardMaterial( { 
-            map: this.assets.baseColor,
-            aoMap: this.assets.ambientOcclusion,
-            displacementMap: this.assets.heightMap,
-            displacementScale: 0.1,
-            normalMap: this.assets.normalMap,
-            roughnessMap:this.assets.roughnessMap,
-            color: 0x00ff00 
-        } );
-        this.mesh = new THREE.Mesh( geometry, material );
-        this.scene.add( this.mesh );
-        this.mesh.position.x = -1
-    }
     
-    setMeshAnimation()
+    setModelAnimation()
     {
         this.bee.children[1].rotation.x =(Math.sin(this.time.elapsed * 0.01))/2
         this.bee.children[2].rotation.x =(Math.sin(-this.time.elapsed * 0.01))/2
@@ -82,6 +51,6 @@ export default class Model{
 
     update()
     {
-        this.setMeshAnimation(this.flag)
+        this.setModelAnimation()
     }
 }
