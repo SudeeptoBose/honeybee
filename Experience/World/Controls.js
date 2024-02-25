@@ -12,10 +12,10 @@ export default class Controls{
 
         GSAP.registerPlugin(ScrollTrigger)
 
-        this.setPath()
+        this.setScrollTrigger()
     }
 
-    setPath()
+    setScrollTrigger()
     {
         this.timeline = new GSAP.timeline()
         this.timeline.to(this.jar.position, {
