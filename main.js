@@ -20,7 +20,6 @@ window.addEventListener("mousemove", (e)=>{
 })
 
 
-
 const getWindowHeight = () =>
 {
     return window.innerHeight
@@ -31,7 +30,7 @@ const firstDiv = document.getElementById('section-1')
 const sections = document.querySelectorAll('.current-section')
 
 window.addEventListener('scroll', ()=>{
-    console.log(getWindowHeight())
+    // console.log(getWindowHeight())
 
     sections.forEach((section, index)=>{
 
@@ -39,13 +38,13 @@ window.addEventListener('scroll', ()=>{
     
         if(divProps.top <= getWindowHeight() && divProps.bottom>=0 )
         {
-            console.log(index +'visible-' + divProps.top)
+            // console.log(index +'visible-' + divProps.top)
             experience.world.jar.setJarColor(section.getAttribute('color'))
         }
         else
         {
-            console.log('not visible-' + divProps.top)
+            // console.log('not visible-' + divProps.top)
         }
-        console.log(divProps)    
+        // console.log(divProps)    
     })
 })

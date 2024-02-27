@@ -7,6 +7,7 @@ export default class Model{
         this.scene = this.experience.scene
         this.resources = this.experience.resources
         this.assets = this.resources.items
+        this.sizes = this.experience.sizes
         this.bee = this.assets.bee.scene
         this.time = this.experience.time
         // console.log(this.bee)
@@ -24,7 +25,7 @@ export default class Model{
     {
         this.scene.add(this.bee)
         this.bee.rotation.y = 1.5
-        this.bee.position.x = 2
+        this.bee.position.x = 0
         this.bee.position.y = 1
 
         this.bee.scale.set(0.1,0.1,0.1)

@@ -43,7 +43,7 @@ export default class Controls{
             this.firstTimeline = new GSAP.timeline({
                 scrollTrigger:{
                     trigger: ".hello",
-                    markers: true,
+                    markers: false,
                     start: "top top",
                     end: "bottom bottom",
                     scrub: 1.6,
@@ -65,7 +65,7 @@ export default class Controls{
             this.firstTimeline = new GSAP.timeline({
                 scrollTrigger:{
                     trigger: ".first-margin",
-                    markers: true,
+                    markers: false,
                     start: "top top",
                     end: "bottom bottom",
                     scrub: 1.6,
