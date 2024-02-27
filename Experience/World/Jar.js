@@ -13,12 +13,14 @@ export default class Jar{
         this.time = this.experience.time
 
         this.setJar()
+        // this.setJarColor('#ff00ff')
     }
 
     setJar()
     {
         this.jar.scale.set(0.4,0.4,0.4)
         this.scene.add(this.jar);
+        // console.log(this.jar)
         this.jar.position.y = 0
         this.jar.position.x = this.sizes.width * 0.01
     }
@@ -47,6 +49,20 @@ export default class Jar{
             // console.log(this.jar.position.x)
         }
 
+    }
+
+    setJarColor(value)
+    {
+        this.jar.traverse((child)=>{
+            if(child.isMesh === true)
+            {
+                if(child.name === "Cylinder")
+                {
+
+                    child.material.color = new THREE.Color(value)
+                }
+            }
+        })
     }
 
 
