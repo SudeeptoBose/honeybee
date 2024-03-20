@@ -6,6 +6,33 @@ const playAudio = new Audio('/sounds/bee_wasp.mp3')
 const playAudio2 = new Audio('/sounds/adventure.aac')
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById("myModal");
+    var overlay = document.getElementById("overlay");
+
+    // Display modal and overlay
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+
+    // Get the close button
+    var closeBtn = document.getElementById("closeBtn");
+
+    // When the user clicks on the close button or overlay, close the modal
+    closeBtn.onclick = function() {
+      modal.classList.add('hidden');
+      overlay.classList.add('hidden');
+    }
+
+    overlay.onclick = function() {
+      modal.classList.add('hidden');
+      overlay.classList.add('hidden');
+    }
+  });
+
+
+
+
 window.addEventListener("click", (e)=>{
     playAudio2.play()
 })
