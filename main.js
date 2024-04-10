@@ -18,24 +18,27 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get the close button
     var closeBtn = document.getElementById("closeBtn");
 
-    // When the user clicks on the close button or overlay, close the modal
+    // When the user clicks on the close button, close the modal
     closeBtn.onclick = function() {
       modal.classList.add('hidden');
       overlay.classList.add('hidden');
+      playAudio2.play()
+      playBuzz()
     }
 
+    // When the user clicks on the overlay, close the modal
     overlay.onclick = function() {
       modal.classList.add('hidden');
       overlay.classList.add('hidden');
     }
   });
 
-
-
-
-window.addEventListener("click", (e)=>{
-    playAudio2.play()
+const playBuzz = () =>
+{
+    window.addEventListener("mousemove", ()=>{
+        playAudio.play()
 })
+}
 
 // Model follow mouse
 
@@ -43,7 +46,6 @@ window.addEventListener("mousemove", (e)=>{
 
     experience.world.model.bee.position.x =  (-0.5 + (e.clientX/window.innerWidth)) * 4
     experience.world.model.bee.position.y = (0.5 -(e.clientY/window.innerHeight)) * 3
-    playAudio.play()
 })
 
 
