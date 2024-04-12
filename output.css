@@ -767,6 +767,11 @@ body
   height: 100%;
 }
 
+#closeBtn
+{
+  padding: 10px;
+}
+
 @media (min-width: 1280px){
   .xl\:container{
     width: 100%;
